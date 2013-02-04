@@ -1,6 +1,6 @@
 # Priority Queue
 
-Priority queue based on a max [heap](http://en.wikipedia.org/wiki/Heap_(data_structure)). A comparer can be injected to control the priority function.
+Priority queue based on a max [heap](http://en.wikipedia.org/wiki/Heap_(data_structure). A comparer can be injected to control the priority function.
 ```csharp
 var queue = new PriorityQueue<int>();
 queue.Push(2);
@@ -35,13 +35,12 @@ array[100,999,29] = "hello";
 
 The dynamic array can be resized up or down, globally or per dimension using `Resize` and `ResizeDim`
 
-An array can be inserted into the dynamic array at any given position, puhsing elements along any given dimension.
-
 A regular array can be extracted using the `ToArray` method or by type conversion.
 ```csharp
 var darray = new DynamicArray<string>(2);
 var array = (string[,])darray;
 ```
+An array can be inserted into the dynamic array at any given position, puhsing elements along any given dimension using the `Insert` method.
 
 # License
 Copyright 2009-2013 [Sinbadsoft](http://www.sinbadsoft.com).
