@@ -37,16 +37,6 @@ namespace Sinbadsoft.Lib.Collections.Tests.DynamicArray
         }
 
         [Test]
-        public void foobar()
-        {
-            var array = new DynamicArray<string>(2);
-            array.Insert(new[,] { { "0,0", "0,1" }, { "1,0", "1,1" } }, 0, 0, 0);
-            array.ResizeDim(0, 1);
-            array.Resize(0, 0);
-            Console.WriteLine(array.ToString());
-        }
-
-        [Test]
         public void ResizeWithSameSize()
         {
             var darray = new DynamicArray<int>(1);
