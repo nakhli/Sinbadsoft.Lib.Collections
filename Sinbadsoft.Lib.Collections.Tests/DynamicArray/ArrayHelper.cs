@@ -25,7 +25,6 @@ namespace Sinbadsoft.Lib.Collections.Tests.DynamicArray
         /// Prevents a default instance of the ArrayHelper class from being created.
         /// User the factory method instead.
         /// </summary>
-        /// <see cref="New"/>
         private ArrayHelper()
         {
         }
@@ -40,14 +39,14 @@ namespace Sinbadsoft.Lib.Collections.Tests.DynamicArray
         /// <returns> The resulting new <see cref="DynamicArray{T}"/>. </returns>
         internal static DynamicArray<T> ToDynamic<T>(Array arr)
         {
-            CopyToDynamicArrayAction<T> copyToAction = new CopyToDynamicArrayAction<T>(arr.Rank);
+            var copyToAction = new CopyToDynamicArrayAction<T>(arr.Rank);
             RecursiveArrayEnumerator.Iterate(arr, copyToAction.Enumerate);
             return copyToAction.DArray;
         }
 
         internal static string SequenceToString<T>(T[] sequence)
         {
-            StringBuilder sbuilder = new StringBuilder("(");
+            var sbuilder = new StringBuilder("(");
             for (int i = 0; i < sequence.Length; ++i)
             {
                 sbuilder.Append(sequence[i]);
@@ -68,7 +67,7 @@ namespace Sinbadsoft.Lib.Collections.Tests.DynamicArray
 
         internal static string ToString<T>(DynamicArray<T> dynarray)
         {
-            StringBuilder sbuilder = new StringBuilder();
+            var sbuilder = new StringBuilder();
             for (int i0 = 0; i0 < dynarray.GetCount(0); ++i0)
             {
                 const char LEFT = '[', RIGHT = ']';

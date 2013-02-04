@@ -22,7 +22,7 @@ namespace Sinbadsoft.Lib.Collections.Tests.DynamicArray
         private static readonly int[] Zero2DIdx = { 0, 0 };
 
         [Test]
-        public static void ExceptionOnInsertArrayOfInvalidRank()
+        public void ExceptionOnInsertArrayOfInvalidRank()
         {
             DynamicArray<int> dynArray = new DynamicArray<int>(2);
             Assert.Throws<RankException>(() => dynArray.Insert(new int[5], 0, 0, 0));
@@ -30,16 +30,26 @@ namespace Sinbadsoft.Lib.Collections.Tests.DynamicArray
         }
 
         [Test]
-        public static void ExceptionOnInsertArrayWithANullLength()
+        public void ExceptionOnInsertArrayWithANullLength()
         {
-            DynamicArray<int> dynArray = new DynamicArray<int>(2);
+            var dynArray = new DynamicArray<int>(2);
             Assert.Throws<ArgumentException>(() => dynArray.Insert(new int[5, 0], 0, 0, 0));
         }
 
         [Test]
-        public static void ResizeWithSameSize()
+        public void foobar()
         {
-            DynamicArray<int> darray = new DynamicArray<int>(1);
+            var array = new DynamicArray<string>(2);
+            array.Insert(new[,] { { "0,0", "0,1" }, { "1,0", "1,1" } }, 0, 0, 0);
+            array.ResizeDim(0, 1);
+            array.Resize(0, 0);
+            Console.WriteLine(array.ToString());
+        }
+
+        [Test]
+        public void ResizeWithSameSize()
+        {
+            var darray = new DynamicArray<int>(1);
             
             IEnumerator invalidated = darray.GetEnumerator();
             Assert.AreEqual(0, darray.Count);

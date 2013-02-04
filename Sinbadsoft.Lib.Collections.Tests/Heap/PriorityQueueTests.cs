@@ -34,55 +34,55 @@ namespace Sinbadsoft.Lib.Collections.Tests.Heap
         public void MixedPushPopSequence()
         {
             var queue = new PriorityQueue<int>();
-            queue.Push(1);
-            queue.Push(2);
-            queue.Push(5);
-            queue.Push(3);
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(5);
+            queue.Enqueue(3);
 
-            Assert.AreEqual(5, queue.Pop());
+            Assert.AreEqual(5, queue.Dequeue());
             
-            queue.Push(6);
-            Assert.AreEqual(6, queue.Pop());
+            queue.Enqueue(6);
+            Assert.AreEqual(6, queue.Dequeue());
 
-            queue.Push(4);
-            Assert.AreEqual(4, queue.Pop());
+            queue.Enqueue(4);
+            Assert.AreEqual(4, queue.Dequeue());
 
-            queue.Push(14);
-            Assert.AreEqual(14, queue.Pop());
+            queue.Enqueue(14);
+            Assert.AreEqual(14, queue.Dequeue());
 
-            queue.Push(1);
-            Assert.AreEqual(3, queue.Pop());
+            queue.Enqueue(1);
+            Assert.AreEqual(3, queue.Dequeue());
 
-            Assert.AreEqual(2, queue.Pop());
-            Assert.AreEqual(1, queue.Pop());
-            Assert.AreEqual(1, queue.Pop());
+            Assert.AreEqual(2, queue.Dequeue());
+            Assert.AreEqual(1, queue.Dequeue());
+            Assert.AreEqual(1, queue.Dequeue());
 
-            Assert.AreEqual(0, queue.Size);
-            Assert.Throws<InvalidOperationException>(() => queue.Top());
-            Assert.Throws<InvalidOperationException>(() => queue.Pop());
+            Assert.AreEqual(0, queue.Count);
+            Assert.Throws<InvalidOperationException>(() => queue.Peek());
+            Assert.Throws<InvalidOperationException>(() => queue.Dequeue());
         }
 
         private static void PushAllItemsThenPopAllAndCheckOrder<T>(T[] data)
         {
             var queue = new PriorityQueue<T>();
-            Assert.AreEqual(0, queue.Size);
+            Assert.AreEqual(0, queue.Count);
 
             for (int i = 0; i < data.Length; i++)
             {
-                queue.Push(data[i]);
-                Assert.AreEqual(i + 1, queue.Size);
+                queue.Enqueue(data[i]);
+                Assert.AreEqual(i + 1, queue.Count);
             }
 
             Array.Sort(data);
 
             for (int i = data.Length - 1; i >= 0; i--)
             {
-                Assert.AreEqual(data[i], queue.Top());
-                Assert.AreEqual(data[i], queue.Pop());
-                Assert.AreEqual(i, queue.Size);
+                Assert.AreEqual(data[i], queue.Peek());
+                Assert.AreEqual(data[i], queue.Dequeue());
+                Assert.AreEqual(i, queue.Count);
             }
 
-            Assert.Throws<InvalidOperationException>(() => queue.Pop());
+            Assert.Throws<InvalidOperationException>(() => queue.Dequeue());
         }
     }
 }

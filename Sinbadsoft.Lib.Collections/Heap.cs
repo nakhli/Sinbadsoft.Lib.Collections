@@ -17,6 +17,14 @@ namespace Sinbadsoft.Lib.Collections
         private readonly IList<T> list;
         private readonly IComparer<T> comparer;
 
+        public Heap() : this(Comparer<T>.Default)
+        {
+        }
+
+        public Heap(IComparer<T> comparer) : this(new List<T>(), 0, comparer)
+        {
+        }
+
         public Heap(IList<T> list, int count, IComparer<T> comparer)
         {
             this.comparer = comparer;
@@ -64,6 +72,15 @@ namespace Sinbadsoft.Lib.Collections
 
             this.Count++;
             this.HeapUp(this.Count - 1);
+        }
+
+        public void Clear(bool clearUnderlyingList = false)
+        {
+            this.Count = 0;
+            if (clearUnderlyingList)
+            {
+                this.list.Clear();
+            }
         }
 
         private void Heapify()

@@ -343,7 +343,7 @@ namespace Sinbadsoft.Lib.Collections
             {
                 int[] rangeMax = IndexesHelper.Add(IndexesHelper.MaxIndexes(arr), indexes);
                 rangeMax[dimension] = oldCounts[dimension] - 1;
-                IndexesEnumerator rangeToMove = new IndexesEnumerator(rangeLowerBound, rangeMax, true);
+                var rangeToMove = new IndexesEnumerator(rangeLowerBound, rangeMax, true);
                 foreach (int[] source in rangeToMove)
                 {
                     int[] destination = IndexesHelper.Clone(source);
