@@ -3,11 +3,11 @@
 Priority queue based on a max [heap](http://en.wikipedia.org/wiki/Heap_(data_structure). A comparer can be injected to control the priority function.
 ```csharp
 var queue = new PriorityQueue<int>();
-queue.Push(2);
-queue.Push(100);
+queue.Enqueue(2);
+queue.Enqueue(100);
 
-queue.Top(); // returns 100
-queue.Pop(); // return 100 and removes it from queue
+queue.Peek(); // returns 100 doesn't mutate the queue
+queue.Dequeue(); // return 100 and removes it from queue
 ```
 
 The underlying heap structure and a derived heapsort algorithm are also available in the library.
