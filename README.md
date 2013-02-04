@@ -14,8 +14,8 @@ The underlying heap structure and a derived heapsort algorithm are also availabl
 
 # Reversible dictionary
 Provides `IReversibleDictionary<TKey,TValue>` an interface for reversible dictionaries. A reversible dictionary maintains a bijective association between keys and values (aka reverse keys). Two implementations are provided in the library: 
-* `SortedReversibleDictionary<K,V>` based on [<code>SortedDictionary<K,V></code>](http://msdn.microsoft.com/en-us/library/f7fta44c.aspx)
-* `ReversibleDictionary<T,V>`based on [<code>Dictionary<K,V></code>](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)
+* `SortedReversibleDictionary<K,V>` based on [<code>SortedDictionary</code>](http://msdn.microsoft.com/en-us/library/f7fta44c.aspx).
+* `ReversibleDictionary<T,V>` based on [<code>Dictionary</code>](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx).
 
 # Dynamic Array
 `DynamicArray<T>` is a multidimensional generic array based list. Just like [<code>List<T></code>](http://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) but with configurable rank ([see array rank](http://msdn.microsoft.com/en-us/library/system.array.rank.aspx)).
