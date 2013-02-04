@@ -17,3 +17,8 @@ A reversible dictionaries maintains a bijective association between keys and val
 
 # DynamicArray
 TODO
+
+# License
+Copyright 2009-2013 [Sinbadsoft](http://www.sinbadsoft.com).
+
+Licensed under the GNU Library General Public License (LGPL) [version 2.1](http://www.gnu.org/licenses/lgpl-2.1-standalone.html).
