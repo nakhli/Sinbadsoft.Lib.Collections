@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{581A478B-9DFB-4A0F-AF3B-306E57BA8976}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sinbadsoft.AdvancedCollections.Tests</RootNamespace>
+    <AssemblyName>Sinbadsoft.AdvancedCollections.Tests</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Common\Sinbadsoft.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gallio" />
+    <Reference Include="MbUnit" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DynamicArray\ArrayHelper.cs" />
+    <Compile Include="DynamicArray\ConversionTests.cs" />
+    <Compile Include="DynamicArray\DynamicArrayEnumeratorTests.cs" />
+    <Compile Include="DynamicArray\DynamicArrayExceptionsTests.cs" />
+    <Compile Include="DynamicArray\IndexerTests.cs" />
+    <Compile Include="DynamicArray\RecursiveArrayEnumerator.cs" />
+    <Compile Include="DynamicArray\ResizeInsertTests.cs" />
+    <Compile Include="ReversibleDictionary\BinarySerializationTests.cs" />
+    <Compile Include="ReversibleDictionary\CommonTests.cs" />
+    <Compile Include="ReversibleDictionary\DictionaryAssert.cs" />
+    <Compile Include="DynamicArray\DynamicArrayAssert.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReversibleDictionary\ReversibleDictionaryTests.cs" />
+    <Compile Include="DynamicArray\IndexesEnumeratorTests.cs" />
+    <Compile Include="ReversibleDictionary\SortedReversibleDictionaryTests.cs" />
+    <Compile Include="ReversibleDictionary\TestFactoryHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Common\Sinbadsoft.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SinbadSoft.AdvancedCollections\Sinbadsoft.AdvancedCollections_VS2005.csproj">
+      <Project>{45875B4A-B81B-4F37-83AA-39A4817E1003}</Project>
+      <Name>Sinbadsoft.AdvancedCollections</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

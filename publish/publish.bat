@@ -1,0 +1,1 @@
+NuGet.exe pack -Build -Verbose -Properties Configuration=Release;OutputPath=%TEMP% ..\Sinbadsoft.Lib.Collections\Sinbadsoft.Lib.Collections.csproj

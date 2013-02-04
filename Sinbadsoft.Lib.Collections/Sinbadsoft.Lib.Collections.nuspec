@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <title>$id$</title>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <description>$description$</description>
+    <summary>$description$</summary>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <tags>collections priority queue heap heapsort dictionary array</tags>
+    <language>en-US</language>
+    <owners>Sinbadsoft</owners>
+    <licenseUrl>http://www.gnu.org/licenses/lgpl-2.1-standalone.html</licenseUrl>
+    <projectUrl>https://github.com/Sinbadsoft/Sinbadsoft.Lib.Collections</projectUrl>
+    <copyright>Copyright (c) Chaker Nakhli 2010-2013. Licensed under the GNU Library General Public License (LGPL) version 2.1</copyright>
+    <dependencies>
+    </dependencies>
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+</package>
