@@ -9,17 +9,23 @@
 // <date>2011/01/08</date>
 namespace Sinbadsoft.Lib.Collections
 {
+    using System;
     using System.Collections.Generic;
 
     public class HeapSort<T>
     {
-        public static void Sort(IList<T> list, IComparer<T> comparer)
+        public static void Sort(IList<T> list, Func<T, T, int> comparer)
         {
             var heap = new Heap<T>(list, list.Count, comparer);
             while (heap.Count > 0)
             {
                 heap.PopRoot();
             }
+        }
+
+        public static void Sort(IList<T> list, IComparer<T> comparer)
+        {
+            Sort(list, comparer.Compare);
         }
     }
 }

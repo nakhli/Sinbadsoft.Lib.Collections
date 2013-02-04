@@ -17,6 +17,8 @@
     <dependencies>
     </dependencies>
     <releaseNotes>
+      * Added PriorityQueue{T,V}
+      * Heap and PriorityQueue now take lambda as comparer
     </releaseNotes>
   </metadata>
 </package>

@@ -15,9 +15,9 @@ namespace Sinbadsoft.Lib.Collections
     public class Heap<T>
     {
         private readonly IList<T> list;
-        private readonly IComparer<T> comparer;
+        private readonly Func<T, T, int> comparer;
 
-        public Heap() : this(Comparer<T>.Default)
+        public Heap() : this(Comparer<T>.Default.Compare)
         {
         }
 
@@ -25,7 +25,15 @@ namespace Sinbadsoft.Lib.Collections
         {
         }
 
-        public Heap(IList<T> list, int count, IComparer<T> comparer)
+        public Heap(Func<T, T, int> comparer) : this(new List<T>(), 0, comparer)
+        {
+        }
+
+        public Heap(IList<T> list, int count, IComparer<T> comparer) : this(list, count, comparer.Compare)
+        {   
+        }
+
+        public Heap(IList<T> list, int count, Func<T, T, int> comparer)
         {
             this.comparer = comparer;
             this.list = list;
@@ -97,7 +105,7 @@ namespace Sinbadsoft.Lib.Collections
             while (true)
             {
                 int parent = this.Parent(i);
-                if (parent < 0 || this.comparer.Compare(this.list[parent], elt) > 0)
+                if (parent < 0 || this.comparer(this.list[parent], elt) > 0)
                 {
                     break;
                 }
@@ -121,9 +129,9 @@ namespace Sinbadsoft.Lib.Collections
 
                 int child = rchild < 0
                   ? lchild
-                  : this.comparer.Compare(this.list[lchild], this.list[rchild]) > 0 ? lchild : rchild;
+                  : this.comparer(this.list[lchild], this.list[rchild]) > 0 ? lchild : rchild;
 
-                if (this.comparer.Compare(this.list[child], this.list[i]) < 0)
+                if (this.comparer(this.list[child], this.list[i]) < 0)
                 {
                     break;
                 }
