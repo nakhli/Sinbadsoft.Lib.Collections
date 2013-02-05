@@ -17,7 +17,7 @@
     <dependencies>
     </dependencies>
     <releaseNotes>
-      * Fixed ambiguous constructor cases in priority queue
+      * added three arguments priority queue constructor
     </releaseNotes>
   </metadata>
 </package>
