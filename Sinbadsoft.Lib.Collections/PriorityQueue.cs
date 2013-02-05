@@ -33,22 +33,32 @@ namespace Sinbadsoft.Lib.Collections
         {
         }
 
-        public PriorityQueue(IComparer<T> comparer, IEnumerable<T> collection = null)
+        public PriorityQueue(IComparer<T> comparer)
+            : this(comparer.Compare, DEFAULT_CAPACITY, null)
+        {
+        }
+
+        public PriorityQueue(IComparer<T> comparer, IEnumerable<T> collection)
             : this(comparer.Compare, DEFAULT_CAPACITY, collection)
         {
         }
 
-        public PriorityQueue(IComparer<T> comparer, int capacity = DEFAULT_CAPACITY)
+        public PriorityQueue(IComparer<T> comparer, int capacity)
             : this(comparer.Compare, capacity, null)
         {
         }
 
-        public PriorityQueue(Func<T, T, int> comparer, IEnumerable<T> collection = null)
+        public PriorityQueue(Func<T, T, int> comparer)
+            : this(comparer, DEFAULT_CAPACITY, null)
+        {
+        }
+
+        public PriorityQueue(Func<T, T, int> comparer, IEnumerable<T> collection)
             : this(comparer, DEFAULT_CAPACITY, collection)
         {
         }
 
-        public PriorityQueue(Func<T, T, int> comparer, int capacity = DEFAULT_CAPACITY)
+        public PriorityQueue(Func<T, T, int> comparer, int capacity)
             : this(comparer, capacity, null)
         {
         }
@@ -100,16 +110,17 @@ namespace Sinbadsoft.Lib.Collections
     public class PriorityQueue<TKey, TValue> : PriorityQueue<KeyValuePair<TKey, TValue>>
     {
         public PriorityQueue()
+            : base((p1, p2) => Comparer<TKey>.Default.Compare(p1.Key, p2.Key))
         {
         }
 
         public PriorityQueue(IEnumerable<KeyValuePair<TKey, TValue>> collection)
-            : base(collection)
+            : base((p1, p2) => Comparer<TKey>.Default.Compare(p1.Key, p2.Key), collection)
         {
         }
 
         public PriorityQueue(int capacity)
-            : base(capacity)
+            : base((p1, p2) => Comparer<TKey>.Default.Compare(p1.Key, p2.Key), capacity)
         {
         }
 

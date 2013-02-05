@@ -17,8 +17,7 @@
     <dependencies>
     </dependencies>
     <releaseNotes>
-      * Added PriorityQueue{T,V}
-      * Heap and PriorityQueue now take lambda as comparer
+      * Fixed ambiguous constructor cases in priority queue
     </releaseNotes>
   </metadata>
 </package>
