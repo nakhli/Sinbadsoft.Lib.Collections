@@ -1,6 +1,6 @@
 # Priority Queue
 
-Priority queue based on a max [heap](http://en.wikipedia.org/wiki/Heap_(data_structure). A comparer can be injected to control the priority function.
+Priority queue based on a max [heap](http://en.wikipedia.org/wiki/Heap_(data_structure)). A comparer can be injected to control the priority function.
 ```csharp
 var queue = new PriorityQueue<int>();
 queue.Enqueue(2);
