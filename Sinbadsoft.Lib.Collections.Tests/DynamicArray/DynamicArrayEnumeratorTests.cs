@@ -25,7 +25,7 @@ namespace Sinbadsoft.Lib.Collections.Tests.DynamicArray
     [TestFixture]
     public class DynamicArrayEnumeratorTests
     {
-        public IEnumerable<Action<DynamicArray<int>>> InvalidateActions
+        public static IEnumerable<Action<DynamicArray<int>>> InvalidateActions
         {
             get
             {
