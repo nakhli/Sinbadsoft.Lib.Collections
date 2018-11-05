@@ -65,3 +65,9 @@ _ReSharper.*/
 ehthumbs.db
 Icon?
 Thumbs.db
+
+#visual studio stuff
+.vs/*
+
+#nuget stuff
+packages/*
